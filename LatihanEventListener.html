@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Event Listener</title>
+</head>
+<body>
+  <div>
+    <div>
+      <h1 id="Teks">baleg moal</h1>
+      <button id="BT">Ubah Teks</button>
+      <button id="BW">Ubah Warna</button>
+    </div>
+
+    <div>
+      <h1 id="Angka">0</h1>
+      <button id="Kurang">-</button>
+      <button id="Tambah">+</button>
+    </div>
+  </div>
+
+  <script>
+    // 1. ubah teks 
+    document.getElementById("BT").addEventListener("click", function(){
+      document.getElementById("Teks").innerHTML = "moal baleg";
+    });
+
+    // 2. ganti warna baru
+    document.getElementById("BW").addEventListener("click", function(){
+      const Teks = document.getElementById("Teks");
+      const warnabaru = Teks.style.color === "yellow" ? "black" : "yellow";
+      Teks.style.color = warnabaru;
+    });
+
+    // 3. tambah kurang tombol
+    let angka = 0;
+    document.getElementById("Tambah").addEventListener("click", function(){
+      angka++;
+      document.getElementById("Angka").textContent = angka;
+    });
+
+    document.getElementById("Kurang").addEventListener("click", function(){
+      angka--;
+      document.getElementById("Angka").textContent = angka;
+    });
+  </script>
+</body>
+</html>
